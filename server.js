@@ -9,9 +9,9 @@ var middleware = {
     }
 };
 
-app.use(middleware.requireAuthentication);
+// app.use(middleware.requireAuthentication);
 
-app.get('/about', function(req, res) {
+app.get('/about', middleware.requireAuthentication, function(req, res) {
     res.send(`About Us`);
 });
 
