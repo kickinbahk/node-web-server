@@ -8,7 +8,8 @@ var middleware = {
         next();
     },
     logger: function (req, res, next) {
-        console.log(`${req.method} ${req.originalUrl}`);
+        var date = new Date().toString();
+        console.log(`Request: ${date} ${req.method} ${req.originalUrl}`);
         next();
     }
 };
